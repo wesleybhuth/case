@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 def main():
-    st.set_page_config(page_title="AI-Powered Textbot Case Study", layout="wide", page_icon="mb_logo_white copy.png")
+    st.set_page_config(page_title="AI-Powered Textbot Case Study", layout="wide", page_icon="case_study/mb_logo_white copy.png")
     
     st.title("AI-Powered Textbot Case Study")
     st.divider()
@@ -18,7 +18,7 @@ def main():
         "Results",
         "Key Takeaways"
     ]
-    st.sidebar.image("mb_logo_white copy.png")
+    st.sidebar.image("case_study/mb_logo_white copy.png")
     st.sidebar.divider()
     st.sidebar.header("Menu")
     selection = st.sidebar.radio("", sections)
@@ -164,7 +164,7 @@ def main():
             """)
 
         with solImage:
-            st.image("flowChart_caseStudy.png")
+            st.image("case_study/flowChart_caseStudy.png")
         
     elif selection == "Results":
         st.header("Results")
