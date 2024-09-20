@@ -4,7 +4,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 def main():
-    st.set_page_config(page_title="AI-Powered Textbot Case Study", layout="wide", page_icon="case_study/mb_logo_white copy.png")
+    st.set_page_config(page_title="AI-Powered Textbot Case Study", layout="wide", page_icon="mb_logo_white copy.png")
     
     st.title("AI-Powered Textbot Case Study")
     st.divider()
@@ -18,7 +18,7 @@ def main():
         "Results",
         "Key Takeaways"
     ]
-    st.sidebar.image("case_study/mb_logo_white copy.png")
+    st.sidebar.image("mb_logo_white copy.png")
     st.sidebar.divider()
     st.sidebar.header("Menu")
     selection = st.sidebar.radio("", sections)
@@ -27,7 +27,10 @@ def main():
     if selection == "Overview":
         st.header("Overview")
         st.write("""
-        We developed an AI-powered capability to manage text message interactions with leads who signed up on the client's website. 
+        moonbird developed a cutting-edge AI-powered textbot designed to streamline customer interactions for a healthcare client. 
+        The textbot not only automates responses to common inquiries but also integrates seamlessly with human representatives 
+        for more complex queries. This intelligent solution improves customer satisfaction, enhances operational efficiency, and 
+        empowers human resources to focus on high-value tasks.
         The textbot was designed with the following key capabilities:
         """)
         
@@ -54,7 +57,9 @@ def main():
     elif selection == "Client Background":
         st.header("Client Background")
         st.write("""
-        Our client operates in the healthcare space with the following key goals:
+        Our client is a leader in the healthcare space, focused on providing high-quality patient care through innovative 
+        technology and proprietary treatment methods. Their core objectives included driving leads, improving patient outcomes, 
+        and optimizing internal workflows by minimizing the time spent on routine customer inquiries.
         """)
         
         # Client goals with importance ratings
@@ -98,13 +103,19 @@ def main():
     elif selection == "Challenge":
         st.header("Challenge")
         st.write("""
-        The main challenges in implementing the AI-powered textbot were:
-        1. Integrating LLM capabilities into the existing process managed by human representatives
-        2. Connecting multiple systems and drawing from multiple data sources
-        3. Implementing human-in-the-loop for specific use cases (e.g., scheduling, location questions)
-        4. Equipping the LLM with context from the wider conversation
-        5. Ensuring ongoing monitoring of LLM responses
-        """)
+        The client faced multiple challenges in their operational processes:
+        1. Resource constraints: Human representatives were overwhelmed with repetitive queries, leaving little time for strategic tasks like lead generation.
+        2. Data silos: The client used multiple platforms, making it difficult to provide a unified customer experience.
+        3. Scalability issues: Handling an increasing number of inquiries required a solution that could scale without needing additional personnel.
+        4. Consistency and safety: AI-generated responses had to align with service standards and avoid errors while addressing sensitive healthcare-related queries​.
+       """)
+        # In addition, the technical challenges in implementing the AI-powered textbot were as follows:
+        # 1. Integrating LLM capabilities into the existing process managed by human representatives
+        # 2. Connecting multiple systems and drawing from multiple data sources
+        # 3. Implementing human-in-the-loop for specific use cases (e.g., scheduling, location questions)
+        # 4. Equipping the LLM with context from the wider conversation
+        # 5. Ensuring ongoing monitoring of LLM responses
+        # """)
         
         # Visualization: Challenge Complexity
         challenges = ['System Integration', 'Human-in-the-loop', 'Contextual Understanding', 'Response Monitoring', 'Multi-system Connectivity']
@@ -130,14 +141,30 @@ def main():
         sol, solImage = st.columns(2)
         with sol:
             st.write("""
-            Our team architected a solution with the following key features:
-            - Fast, accurate, predictable, and safe responses
-            - Significant mitigation of LLM hallucinations
-            - Seamless integrations with all systems, scalable across multiple clinics
-            - Bite-sized classification tasks using sequential chains of prompts and code processing
-            - Prioritization of accuracy, safety, and predictability
-            - Leveraging LLMs for natural language processing
-            """)
+                The AI-powered textbot was engineered with a focus on accuracy, scalability, and seamless system integration. The technical architecture included the following key elements:
+                """)
+            st.subheader("Input Processing and Classification:")
+            st.write("""The bot’s NLP capabilities analyzed incoming messages to understand the context and classify the type of inquiry (e.g., scheduling, treatment information, general questions).
+                     """)
+            st.subheader("Sequential Prompt Chaining:")
+            st.write("""Complex customer inquiries were handled using prompt chaining, where each query was broken down into smaller tasks. This method ensured accuracy by allowing the system to process each component step-by-step before generating a response.
+                     """)
+            st.subheader("Human-in-the-Loop Integration:")
+            st.write("""CFor cases requiring human intervention (e.g., scheduling appointments or answering location-based queries), the bot automatically routed the conversation to a human representative through Slack, ensuring seamless transitions​.
+                     """)
+            st.subheader("Multi-Source Data Integration:")
+            st.write("""The system connected to multiple data sources, including:""")
+            st.write("*Text platforms for sending and receiving messages")
+            st.write("*BigQuery for logging and monitoring dashboards")
+            st.write("*Slack for human assistance integration")
+            st.write("""This multi-system connectivity ensured that all responses were informed by accurate and up-to-date information across platforms.
+                     """)
+            st.subheader("Response Generation and Safety Checks:")
+            st.write("""The LLM (Large Language Model) was used to generate responses while incorporating safety checks to prevent hallucinations and ensure that all replies adhered to client-specific guidelines. This process reduced errors and made the responses both reliable and safe​.
+                     """)
+            st.subheader("Scalability Architecture:")
+            st.write("""The system was built to be scalable, enabling it to handle increasing volumes of customer inquiries without performance degradation. This architecture is easily adaptable for multiple clinics, enhancing the client's ability to grow without the need for additional resources
+                    """)
             
             st.subheader("Solution Architecture Flow")
             
@@ -164,7 +191,7 @@ def main():
             """)
 
         with solImage:
-            st.image("case_study/flowChart_caseStudy.png")
+            st.image("flowChart_caseStudy.png")
         
     elif selection == "Results":
         st.header("Results")
@@ -177,27 +204,27 @@ def main():
         results = [
             {
                 "title": "Improved Resource Allocation",
-                "description": "Human representatives shifted focus to higher-value tasks such as lead generation and deal closings.",
+                "description": "Human representatives were freed from handling repetitive tasks, allowing them to focus on more strategic activities like lead generation and patient care",
                 "icon": "🎯"
             },
             {
-                "title": "Enhanced Customer Experience",
-                "description": "Faster response times and more accurate information improved overall customer satisfaction.",
+                "title": "Faster Response Times",
+                "description": "Automation significantly reduced the time it took to respond to customer inquiries, resulting in higher customer satisfaction.",
                 "icon": "😊"
             },
             {
                 "title": "Increased Operational Efficiency",
-                "description": "Automation of routine inquiries led to smoother operations and reduced workload on staff.",
+                "description": "Automation of routine queries streamlined the client’s operations and reduced the overall workload on staff​.",
                 "icon": "⚙️"
             },
             {
                 "title": "Positive Team Feedback",
-                "description": "Staff reported high satisfaction with the AI assistance, noting reduced stress and more fulfilling work.",
+                "description": "The integration of AI resulted in higher job satisfaction, with team members able to focus on more fulfilling, value-added tasks.",
                 "icon": "👍"
             },
             {
                 "title": "Scalable Solution",
-                "description": "The textbot seamlessly handled increased inquiry volumes without compromising quality.",
+                "description": "The textbot seamlessly handled increased interaction volumes without compromising the quality of responses, positioning the client for sustainable growth.",
                 "icon": "📈"
             }
         ]
@@ -233,7 +260,7 @@ def main():
         takeaways = [
             {
                 "title": "AI Enhances Operational Efficiency",
-                "description": "Integration of AI in customer interactions significantly improves response times and handling capacity.",
+                "description": "Automating repetitive tasks enables human resources to focus on more critical areas.",
                 "icon": "⚡"
             },
             {
@@ -243,7 +270,7 @@ def main():
             },
             {
                 "title": "Prioritize Accuracy and Safety",
-                "description": "Careful system design focusing on precision and safety mitigates risks associated with AI hallucinations.",
+                "description": "Continuous monitoring and safety checks are critical for ensuring reliable AI performance, especially in regulated industries like healthcare​.",
                 "icon": "🛡️"
             },
             {
